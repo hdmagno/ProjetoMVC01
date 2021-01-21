@@ -1,0 +1,9 @@
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExcercicioMvc01.Repositoy\bin\Debug\netcoreapp3.1\ExcercicioMvc01.Repositoy.deps.json
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExcercicioMvc01.Repositoy\bin\Debug\netcoreapp3.1\ExcercicioMvc01.Repositoy.dll
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExcercicioMvc01.Repositoy\bin\Debug\netcoreapp3.1\ExcercicioMvc01.Repositoy.pdb
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExcercicioMvc01.Repositoy\obj\Debug\netcoreapp3.1\ExcercicioMvc01.Repositoy.AssemblyInfoInputs.cache
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExcercicioMvc01.Repositoy\obj\Debug\netcoreapp3.1\ExcercicioMvc01.Repositoy.AssemblyInfo.cs
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExcercicioMvc01.Repositoy\obj\Debug\netcoreapp3.1\ExcercicioMvc01.Repositoy.csproj.CoreCompileInputs.cache
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExcercicioMvc01.Repositoy\obj\Debug\netcoreapp3.1\ExcercicioMvc01.Repositoy.dll
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExcercicioMvc01.Repositoy\obj\Debug\netcoreapp3.1\ExcercicioMvc01.Repositoy.pdb
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExcercicioMvc01.Repositoy\obj\Debug\netcoreapp3.1\ExcercicioMvc01.Repositoy.csprojAssemblyReference.cache
