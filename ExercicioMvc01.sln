@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Presentation Layer", "1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Repository Layer", "2 - Repository Layer", "{9529EB89-7F20-41D1-BDB7-205305A64E2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExercicioMvc01.Presentation", "ExercicioMvc01.Presentation\ExercicioMvc01.Presentation.csproj", "{12252643-440A-406F-BD56-BC9717AD89EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExercicioMvc01.Presentation", "ExercicioMvc01.Presentation\ExercicioMvc01.Presentation.csproj", "{12252643-440A-406F-BD56-BC9717AD89EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcercicioMvc01.Repositoy", "ExcercicioMvc01.Repositoy\ExcercicioMvc01.Repositoy.csproj", "{6E97E905-38C6-42A5-9CB7-70C812C11B83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExcercicioMvc01.Repositoy", "ExcercicioMvc01.Repositoy\ExcercicioMvc01.Repositoy.csproj", "{6E97E905-38C6-42A5-9CB7-70C812C11B83}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
