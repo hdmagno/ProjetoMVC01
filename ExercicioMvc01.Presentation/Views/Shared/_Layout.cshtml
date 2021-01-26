@@ -32,7 +32,7 @@
                             Cadastrar
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Cargo</a></li>
+                            <li><a class="dropdown-item" href="/Cargos/Cadastro">Cargo</a></li>
                             <li><a class="dropdown-item" href="#">Departamento</a></li>
                             <li><a class="dropdown-item" href="#">Funcionario</a></li>
                         </ul>
@@ -52,19 +52,35 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Sucesso!</strong> @TempData["MensagemSucesso"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
-        @RenderBody()
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Erro!</strong> @TempData["MensagemErro"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
-    </div>
+        <div class="container mt-4">
 
-    <div class="fixed-bottom">
-        <p>
-            Projeto desenvolvido em .NET CORE MVC com Dapper
-        </p>
-    </div>
+            @RenderBody()
 
-    <script src="~/js/jquery-3.5.1.js"></script>
-    <script src="~/js/bootstrap.js"></script>
-</body>
+        </div>
+
+        <div class="fixed-bottom">
+            <p>
+                Projeto desenvolvido em .NET CORE MVC com Dapper
+            </p>
+        </div>
+
+        <script src="~/js/jquery-3.5.1.js"></script>
+        <script src="~/js/bootstrap.js"></script>
+    </body>
 </html>

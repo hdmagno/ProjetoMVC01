@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ExcercicioMvc01.Repositoy.Contracts
 {
-    interface IDepartamentoRepository : IBaseRepository<Departamento>
+    public interface IDepartamentoRepository : IBaseRepository<Departamento>
     {
     }
 }

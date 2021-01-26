@@ -29,15 +29,14 @@ namespace ExcercicioMvc01.Repositoy.Repositories
             }
         }
 
-        public List<Funcionario> BuscarPorNome(string nome)
+        public Funcionario BuscarPorNome(string nome)
         {
             var query = @$"SELECT *
                             FROM FUNCIONARIO
-                            WHERE NOME LIKE @NOME
-                            ORDER BY NOME";
+                            WHERE NOME = @NOME";
             using (var connection = new SqlConnection(connectionstring))
             {
-                return connection.Query<Funcionario>(query, new { nome }).ToList();
+                return connection.Query<Funcionario>(query, new { nome }).FirstOrDefault();
             }
         }
 

@@ -28,14 +28,14 @@ namespace ExcercicioMvc01.Repositoy.Repositories
             }
         }
 
-        public List<Departamento> BuscarPorNome(string nome)
+        public Departamento BuscarPorNome(string nome)
         {
             var query = @$"SELECT *
                             FROM DEPARTAMENTO
-                            WHERE NOME LIKE @NOME";
+                            WHERE NOME = @NOME";
             using (var connection = new SqlConnection(connectionstring))
             {
-                return connection.Query<Departamento>(query, new { nome }).ToList();
+                return connection.Query<Departamento>(query, new { nome }).FirstOrDefault();
             }
         }
 
@@ -53,7 +53,7 @@ namespace ExcercicioMvc01.Repositoy.Repositories
         {
             var query = @$"SELECT *
                             FROM DEPARTAMENTO
-                            WHERE ID LIKE @ID";
+                            WHERE ID = @ID";
             using (var connection = new SqlConnection(connectionstring))
             {
                 return connection.Query<Departamento>(query, new { id }).FirstOrDefault();
