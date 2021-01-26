@@ -12,4 +12,9 @@
     <ProjectReference Include="..\ExcercicioMvc01.Repositoy\ExcercicioMvc01.Repositoy.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Departamentos\" />
+    <Folder Include="Views\Funcionarios\" />
+  </ItemGroup>
+
 </Project>

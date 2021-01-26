@@ -27,14 +27,14 @@ namespace ExcercicioMvc01.Repositoy.Repositories
             }
         }
 
-        public List<Cargo> BuscarPorNome(string nome)
+        public Cargo BuscarPorNome(string nome)
         {
             var query = @$"SELECT *
                             FROM CARGO
-                            WHERE NOME LIKE @NOME";
+                            WHERE NOME = @NOME";
             using (var connection = new SqlConnection(connectionstring))
             {
-                return connection.Query<Cargo>(query, new { nome }).ToList();
+                return connection.Query<Cargo>(query, new { nome }).FirstOrDefault();
             }
         }
 
@@ -74,7 +74,7 @@ namespace ExcercicioMvc01.Repositoy.Repositories
         public void Inserir(Cargo obj)
         {
             var query = @"INSERT INTO CARGO(ID, NOME, DESCRICAO)
-                            VALUES(@ID, @NOME, @DESCRICAO)";
+                            VALUES(@IdCargo, @Nome, @Descricao)";
             using (var connection = new SqlConnection(connectionstring))
             {
                 connection.Execute(query, obj);

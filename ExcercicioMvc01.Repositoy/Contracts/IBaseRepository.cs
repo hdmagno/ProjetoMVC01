@@ -11,6 +11,6 @@ namespace ExcercicioMvc01.Repositoy.Contracts
         void Excluir(T obj);
         List<T> BuscarTodos();
         T BusrcarPorId(Guid id);
-        List<T> BuscarPorNome(string nome);
+        T BuscarPorNome(string nome);
     }
 }
