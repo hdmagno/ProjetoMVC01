@@ -32,12 +32,25 @@ namespace ExcercicioMvc01.Repositoy.Repositories
         public List<Funcionario> BuscarPorNome(string nome)
         {
             var query = @$"SELECT *
-                            FROM FUNCIONARIO
-                            WHERE NOME LIKE @NOME
-                            ORDER BY NOME";
+                            FROM FUNCIONARIO f
+                            INNER JOIN CARGO c
+                            ON c.ID = f.ID_CARGO
+                            INNER JOIN DEPARTAMENTO d
+                            ON d.ID = f.ID_DEPARTAMENTO
+                            WHERE f.NOME LIKE @NOME";
             using (var connection = new SqlConnection(connectionstring))
             {
-                return connection.Query<Funcionario>(query, new { nome }).ToList();
+                return connection.Query(query, 
+                    (Funcionario f, Cargo c, Departamento d) =>
+                {
+                    f.Cargo = c;
+                    f.Departamento = d;
+                    return f;
+                },
+                    new { @NOME = $"%{nome}%" },
+                    splitOn: "Id_Cargo, Id_Departamento"
+                    )
+                    .ToList();
             }
         }
 
@@ -75,8 +88,8 @@ namespace ExcercicioMvc01.Repositoy.Repositories
 
         public void Inserir(Funcionario obj)
         {
-            var query = @"INSERT INTO FUNCIONARIOS(ID, NOME, SALARIO, DATAADMISSAO, IDCARGO, IDDEPARTAMENTO)
-                            VALUES(@ID, @NOME, @SALARIO, @DATAADMISSAO, @IDCARGO, @IDDEPARTAMENTO)";
+            var query = @"INSERT INTO FUNCIONARIO(ID, NOME, SALARIO, ID_CARGO, ID_DEPARTAMENTO)
+                            VALUES(@IDFUNCIONARIO, @NOME, @SALARIO, @IdCargo, @IdDepartamento)";
             using (var connection = new SqlConnection(connectionstring))
             {
                 connection.Execute(query, obj);

@@ -21,20 +21,14 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/Home/Index">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Pricing</a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Cadastrar
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Cargo</a></li>
-                            <li><a class="dropdown-item" href="#">Departamento</a></li>
-                            <li><a class="dropdown-item" href="#">Funcionario</a></li>
+                            <li><a class="dropdown-item" href="/Cargos/Cadastro">Cargo</a></li>
+                            <li><a class="dropdown-item" href="/Departamentos/Cadastro">Departamento</a></li>
+                            <li><a class="dropdown-item" href="/Funcionarios/Cadastro">Funcionario</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -42,9 +36,9 @@
                             Consultar
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Cargo</a></li>
-                            <li><a class="dropdown-item" href="#">Departamento</a></li>
-                            <li><a class="dropdown-item" href="#">Departamento</a></li>
+                            <li><a class="dropdown-item" href="/Cargos/Consulta">Cargo</a></li>
+                            <li><a class="dropdown-item" href="/Departamentos/Consulta">Departamento</a></li>
+                            <li><a class="dropdown-item" href="/Funcionarios/Consulta">Funcionário</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -52,19 +46,34 @@
         </div>
     </nav>
 
-    <div class="container mt-4">
+    @if (TempData["MensagemSucesso"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Sucesso!</strong> @TempData["MensagemSucesso"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
-        @RenderBody()
+    @if (TempData["MensagemErro"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Erro!</strong> @TempData["MensagemErro"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
 
-    </div>
+<div class="container mt-4">
 
-    <div class="fixed-bottom">
-        <p>
+    @RenderBody()
+
+    <footer class="fixed-bottom">
+        <p class="text-md-end">
             Projeto desenvolvido em .NET CORE MVC com Dapper
         </p>
-    </div>
+    </footer>
 
-    <script src="~/js/jquery-3.5.1.js"></script>
-    <script src="~/js/bootstrap.js"></script>
-</body>
+</div>   
+        <script src="~/js/jquery-3.5.1.js"></script>
+        <script src="~/js/bootstrap.js"></script>
+    </body>
 </html>

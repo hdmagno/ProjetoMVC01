@@ -105,3 +105,16 @@ D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presen
 D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\obj\Debug\netcoreapp3.1\ExercicioMvc01.Presentation.RazorTargetAssemblyInfo.cs
 D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\obj\Debug\netcoreapp3.1\ExercicioMvc01.Presentation.Views.pdb
 D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\bin\Debug\netcoreapp3.1\Dapper.dll
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\obj\Debug\netcoreapp3.1\Razor\Views\Cargos\Cadastro.cshtml.g.cs
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\obj\Debug\netcoreapp3.1\Razor\Views\Departamentos\Cadastro.cshtml.g.cs
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\obj\Debug\netcoreapp3.1\Razor\Views\Funcionarios\Cadastro.cshtml.g.cs
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\obj\Debug\netcoreapp3.1\Razor\Views\Cargos\Consulta.cshtml.g.cs
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\obj\Debug\netcoreapp3.1\Razor\Views\Departamentos\Consulta.cshtml.g.cs
+D:\Projetos\VisualStudio\Coti-Csharp\Sabado\ExercicioMvc01\ExercicioMvc01.Presentation\obj\Debug\netcoreapp3.1\Razor\Views\Funcionarios\Consulta.cshtml.g.cs

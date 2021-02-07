@@ -1,0 +1,75 @@
+﻿@model ExercicioMvc01.Presentation.Models.FuncionarioCadastroViewModel;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--Nome, Salario, DataAdmissao, Cargo-->
+
+<h5>Cadastro de Funcionários</h5>
+<p>Preencha os campos abaixo</p>
+
+@using (Html.BeginForm())
+{
+    <label>Nome do Funcionario</label>
+    @Html.TextBoxFor(model => model.Nome,
+    new
+        {
+            @class = "form-control col-md-4",
+        @autocomplete = "off",
+        @placeholder = "Ex: João da Silva"
+    })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.Nome)
+    </span>
+    <br />
+
+    <label>Salário do Funcionario</label>
+    @Html.TextBoxFor(model => model.Salario,
+    new
+        {
+            @class = "form-control col-md-4",
+        @autocomplete = "off",
+        @placeholder = "1000"
+    })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.DataAdmissao)
+    </span>
+    <br />
+
+    <label>Data de admissão</label>
+    @Html.TextBoxFor(model => model.DataAdmissao,
+    new
+        {
+        @class = "form-control col-md-4",
+        @type = "date"
+    })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.DataAdmissao)
+    </span>
+    <br />
+
+    <label>Selecione o Cargo:</label>
+    @Html.DropDownListFor(model => model.IdCargo, Model.Cargos, "Escolha uma opção",
+        new
+        {
+            @class = "form-select"
+        })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.IdCargo)
+    </span>
+    <br />
+
+    <label>Selecione o Departamento:</label>
+    @Html.DropDownListFor(model => model.IdDepartamento, Model.Departamentos, "Escolha uma opção",
+        new
+        {
+            @class = "form-select"
+        })
+    <span class="text-danger">
+        @Html.ValidationMessageFor(model => model.IdDepartamento)
+    </span>
+    <br />
+
+    <input type="submit" class="btn btn-success" value="Cadastrar"/>
+}

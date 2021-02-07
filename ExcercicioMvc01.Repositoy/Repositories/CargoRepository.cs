@@ -17,6 +17,16 @@ namespace ExcercicioMvc01.Repositoy.Repositories
             this.connectionstring = connectionstring;
         }
 
+        public void Inserir(Cargo obj)
+        {
+            var query = @"INSERT INTO CARGO(ID, NOME, DESCRICAO)
+                            VALUES(@Id, @Nome, @Descricao)";
+            using (var connection = new SqlConnection(connectionstring))
+            {
+                connection.Execute(query, obj);
+            }
+        }
+
         public void Atualizar(Cargo obj)
         {
             var query = @"UPDATE CARGO 
@@ -24,27 +34,6 @@ namespace ExcercicioMvc01.Repositoy.Repositories
             using (var connection = new SqlConnection(connectionstring))
             {
                 connection.Execute(query, obj);
-            }
-        }
-
-        public List<Cargo> BuscarPorNome(string nome)
-        {
-            var query = @$"SELECT *
-                            FROM CARGO
-                            WHERE NOME LIKE @NOME";
-            using (var connection = new SqlConnection(connectionstring))
-            {
-                return connection.Query<Cargo>(query, new { nome }).ToList();
-            }
-        }
-
-        public List<Cargo> BuscarTodos()
-        {
-            var query = @"SELECT *
-                            FROM CARGO";
-            using (var connection = new SqlConnection(connectionstring))
-            {
-                return connection.Query<Cargo>(query).ToList();
             }
         }
 
@@ -59,6 +48,29 @@ namespace ExcercicioMvc01.Repositoy.Repositories
             }
         }
 
+        public List<Cargo> BuscarTodos()
+        {
+            var query = @"SELECT * FROM CARGO ORDER BY NOME ASC";
+
+            using (var connection = new SqlConnection(connectionstring))
+            {
+                var result = connection.Query<Cargo>(query).ToList();
+                return connection.Query<Cargo>(query).ToList();
+            }
+        }
+
+        public List<Cargo> BuscarPorNome(string nome)
+        {
+            var query = @$"SELECT *
+                            FROM CARGO
+                            WHERE NOME LIKE @NOME";
+            using (var connection = new SqlConnection(connectionstring))
+            {
+                var result = connection.Query<Cargo>(query, new { nome }).ToList();
+                return connection.Query<Cargo>(query, new { @NOME = $"%{nome}%" }).ToList();
+            }
+        }
+
         public void Excluir(Cargo obj)
         {
             var query = @"DELETE 
@@ -69,16 +81,6 @@ namespace ExcercicioMvc01.Repositoy.Repositories
                 connection.Execute(query, obj);
             }
 
-        }
-
-        public void Inserir(Cargo obj)
-        {
-            var query = @"INSERT INTO CARGO(ID, NOME, DESCRICAO)
-                            VALUES(@ID, @NOME, @DESCRICAO)";
-            using (var connection = new SqlConnection(connectionstring))
-            {
-                connection.Execute(query, obj);
-            }
-        }
+        }        
     }
 }

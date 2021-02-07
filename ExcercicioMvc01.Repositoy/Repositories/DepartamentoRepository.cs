@@ -35,16 +35,18 @@ namespace ExcercicioMvc01.Repositoy.Repositories
                             WHERE NOME LIKE @NOME";
             using (var connection = new SqlConnection(connectionstring))
             {
-                return connection.Query<Departamento>(query, new { nome }).ToList();
+                return connection.Query<Departamento>(query, new { @NOME =$"%{nome}%" }).ToList();
             }
         }
 
         public List<Departamento> BuscarTodos()
         {
-            var query = @$"SELECT *
-                            FROM DEPARTAMENTO";
+            var query = @"SELECT *
+                            FROM DEPARTAMENTO
+                            ORDER BY NOME ASC";
             using (var connection = new SqlConnection(connectionstring))
             {
+                var result = connection.Query<Departamento>(query).ToList();
                 return connection.Query<Departamento>(query).ToList();
             }
         }
@@ -53,7 +55,7 @@ namespace ExcercicioMvc01.Repositoy.Repositories
         {
             var query = @$"SELECT *
                             FROM DEPARTAMENTO
-                            WHERE ID LIKE @ID";
+                            WHERE ID = @ID";
             using (var connection = new SqlConnection(connectionstring))
             {
                 return connection.Query<Departamento>(query, new { id }).FirstOrDefault();
@@ -74,7 +76,7 @@ namespace ExcercicioMvc01.Repositoy.Repositories
         public void Inserir(Departamento obj)
         {
             var query = @"INSERT INTO DEPARTAMENTO(ID, NOME, DESCRICAO)
-                            VALUES(@ID, @NOME, @DESCRICAO)";
+                            VALUES(@Id, @Nome, @Descricao)";
             using (var connection = new SqlConnection(connectionstring))
             {
                 connection.Execute(query, obj);

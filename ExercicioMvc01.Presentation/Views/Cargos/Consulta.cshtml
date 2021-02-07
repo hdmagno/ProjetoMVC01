@@ -1,0 +1,56 @@
+﻿@model ExercicioMvc01.Presentation.Models.CargoConsultaViewModel;
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h5>Consulta de Cargos</h5>
+
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm())
+        {
+            <label>Nome do Usuário</label>
+            @Html.TextBoxFor(model => model.Nome,
+           new
+           {
+               @class = "form-control",
+               @placeholder = "Ex: Desenvolvedor"
+           })
+            <span class="text-danger">
+                @Html.ValidationMessageFor(model => model.Nome)
+            </span>
+            <br />
+
+            <input type="submit" class="btn btn-success" value="Pesquisar" />
+        }
+    </div>
+</div>
+
+<br />
+
+@if (Model != null && Model.Cargos != null && Model.Cargos.Count() > 0)
+{
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Cargo</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Cargos)
+            {
+                <tr>
+                    <td>@item.Nome</td>
+                    <td>@item.Descricao</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">Cargos: @Model.Cargos.Count</td>
+            </tr>
+        </tfoot>
+    </table>
+}

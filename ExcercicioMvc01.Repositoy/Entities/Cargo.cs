@@ -6,8 +6,9 @@ namespace ExcercicioMvc01.Repositoy.Entities
 {
     public class Cargo
     {
-        public Guid IdCargo { get; set; }
+        public Guid Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
+
     }
 }
